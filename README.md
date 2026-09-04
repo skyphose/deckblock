@@ -1,7 +1,12 @@
 # TCG Deck-Case Spacer Inserts
 
-A dice/counter tray that lives **inside** a top-opening vertical deck box, alongside the
-cards. One parametric source, two variants.
+**v1.1** — a dice/counter tray that lives **inside** a top-opening vertical deck box,
+alongside the cards. One parametric source, two variants.
+
+> **v1.1** widens and heightens the slab to 67 × 91 mm and replaces the three game layouts
+> with two variants, coin and no coin. **v1.0** is tagged and still buildable: 66 × 88 mm,
+> three layouts. Neither has been printed at these dimensions — see
+> [Before you print a body](#measure-before-you-print).
 
 The variants answer **"do you carry a coin?"**, not "which game do you play". The layouts
 were named after games for three releases and it was always slightly a lie — nothing in

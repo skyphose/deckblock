@@ -1,8 +1,8 @@
 // ============================================================================
-//  TCG Deck-Case Spacer Insert  --  parametric, multi-game
+//  TCG Deck-Case Spacer Insert  --  v1.1, parametric, two variants
 // ----------------------------------------------------------------------------
 //  A full-footprint slab that spans the interior width and height of an
-//  Ultimate Guard Boulder deck case but only ~20-24 mm of its ~67 mm depth.
+//  Ultimate Guard Boulder deck case but only ~19 mm of its ~67 mm depth.
 //  Captured on all four sides by the case walls, so it cannot shift or rattle.
 //
 //  The sliding lid exits the BOTTOM edge: once the slab is seated in the case,
@@ -10,8 +10,14 @@
 //
 //  Print flat, open side up. No supports anywhere.
 //
-//  Set `game` and `part` below (or override with -D) and export STL.
+//  Set `variant` and `part` below (or override with -D) and export STL.
+//
+//  v1.1  67 x 91 mm: height taken from the Katana sleeve so the fit test is
+//        "do your sleeved cards stand up in the box", width a millimetre over
+//        it. Two variants, coin and no coin, replacing three game layouts.
+//  v1.0  66 x 88 mm, three game layouts.
 // ============================================================================
+version = "1.1";
 
 /* [Variant] */
 // Which layout to build. The question is whether you carry a coin, not which
