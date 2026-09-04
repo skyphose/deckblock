@@ -8,10 +8,15 @@ were named after games for three releases and it was always slightly a lie — n
 either is game-specific, and people picked the wrong one because they picked by the name on
 the box rather than by what they actually carry.
 
-**Fit spec:** the slab is **66 × 91 × 18.6 mm**. It drops into any top-opening deck box with
-an interior at least 66 mm wide, 91 mm tall, with 19 mm of depth to spare.
+**Fit spec:** the slab is **67 × 91 × 18.6 mm**. It drops into any top-opening deck box with
+an interior at least 67 mm wide, 91 mm tall, with 19 mm of depth to spare.
 
-The height is taken from the SLEEVE rather than the box: an Ultimate Guard Katana standard sleeve is 66 × 91 mm, and every deck in the box is that tall. So the test is simply whether your sleeved cards stand up in it — if they do, so does this. It also puts the slab's top edge level with the top of
+The height is taken from the SLEEVE rather than the box: an Ultimate Guard Katana standard sleeve is 66 × 91 mm, and every deck in the box is that tall. So the test is simply whether your sleeved cards stand up in it — if they do, so does this.
+The width is that sleeve **plus 1 mm** (`over_w`), because the slab only has to fit the box,
+not sit beside a card — and every millimetre there lands in the cavity field. That does make
+width the one dimension still bounded by the *reported* box interior rather than by a
+published figure: 0.75 mm of clearance per side, so a box 1 mm narrower than reported still
+fits and one 1.5 mm narrower does not. Set `over_w = 0` to sit exactly on the sleeve. It also puts the slab's top edge level with the top of
 the cards instead of 3 mm below them, so the insert no longer sinks away from the opening. Width and height
 are set by the card footprint and so are effectively constant across standard-size boxes;
 only depth varies. Dimensioned around an Ultimate Guard Boulder 100+ (interior ≈ 68.5 × 67.5
@@ -131,7 +136,7 @@ a bay sized for a marker you could keep in the open.
 
 A 51 mm jumbo needs a 51.8 mm well. That exceeds the tallest band the slab can hold once the
 dice row and the bay's bottom wall are accounted for, and it does not fit loose in the bay
-either — the largest bay any layout can offer is 41.9 mm. Nothing in a 66 × 91 slab takes one.
+either — the largest bay any layout can offer is 41.9 mm. Nothing in a 67 × 91 slab takes one.
 If you own a jumbo, it lives outside the insert.
 
 ### Internal dividers run thinner than the perimeter
@@ -407,7 +412,7 @@ and lid and check them in a real case before publishing.
 |---|---|---|
 | Case exterior | 76 × 75 × 98.5 mm | Ultimate Guard product data |
 | Case interior | 68.5 × 67.5 × 93 mm | Ultimate Guard Boulder 100+. **Reported, not official — measure yours** |
-| Slab | 66 × 91 × 18.6 mm | 1.25 mm/side across the width, 1.0 mm/side up the height |
+| Slab | 67 × 91 × 18.6 mm | **0.75 mm/side** across the width, 1.0 mm/side up the height |
 | Die pocket | 16.8 mm sq × 16.3 deep | 0.4 mm/side around a 16.0 mm die |
 | Lid in groove | 0.25 mm/side, 0.3 mm vertical | derived from the groove geometry, unverified in plastic |
 

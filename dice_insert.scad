@@ -63,14 +63,26 @@ box_int_h = 93.0;       // interior height (up the cards)
 // It also puts the slab's top edge level with the top of the cards instead of
 // 3 mm below it, which is the point -- the insert stops sinking away from the
 // opening and is easier to get a finger to.
-// Both slab dimensions are the SLEEVE's, so the slab is exactly the footprint
-// of one card. The width already worked out at 66 mm from box_int_w - fit_gap_w,
-// but only by coincidence -- stating it this way makes it an invariant instead
-// of a number that would drift silently the moment either of those was edited.
+// The sleeve is the REFERENCE both slab dimensions are stated against, which
+// is what keeps them honest: the height is exactly a sleeve, the width is a
+// sleeve plus over_w. Before this they came out of box_int_w - fit_gap_w and
+// happened to land on 66 mm, which read as intent and was coincidence -- it
+// would have drifted silently the moment either of those was edited.
 sleeve_w  = 66.0;       // Ultimate Guard Katana, standard size
 sleeve_h  = 91.0;
+// ...and then a millimetre wider than the sleeve, deliberately. The slab does
+// not have to fit BESIDE a card, only inside the box, and the box is 68.5 mm
+// across. Every millimetre here lands in the cavity field, where it widens the
+// gaps you get a finger into.
+//
+// This is the one dimension where the reported box interior is load-bearing:
+// the height is bounded by the sleeve, which is a published figure, but the
+// width is bounded only by box_int_w. At over_w = 1.0 there is 0.75 mm of
+// clearance per side, so a box 1 mm narrower than reported still fits and one
+// 1.5 mm narrower does not. Set it back to 0 to sit exactly on the sleeve.
+over_w    = 1.0;
 box_int_d = 67.5;       // interior depth  (the card stack) -- 100+; reference only
-fit_gap_w = box_int_w - sleeve_w;   // whatever is left over: 2.5 mm
+fit_gap_w = box_int_w - sleeve_w - over_w;   // whatever is left over: 1.5 mm
 fit_gap_h = box_int_h - sleeve_h;   // whatever is left over: 2.0 mm
 
 /* [Slab] */
