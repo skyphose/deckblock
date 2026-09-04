@@ -3,8 +3,11 @@
 A dice/counter tray that lives **inside** a top-opening vertical deck box, alongside the
 cards. One parametric source, three game layouts.
 
-**Fit spec:** the slab is **66 × 88 × 18.6 mm**. It drops into any top-opening deck box with
-an interior at least 66 mm wide, 88 mm tall, with 19 mm of depth to spare. Width and height
+**Fit spec:** the slab is **66 × 91 × 18.6 mm**. It drops into any top-opening deck box with
+an interior at least 66 mm wide, 91 mm tall, with 19 mm of depth to spare.
+
+The height is taken from the SLEEVE rather than the box: an Ultimate Guard Katana standard sleeve is 66 × 91 mm, and every deck in the box is that tall. So the test is simply whether your sleeved cards stand up in it — if they do, so does this. It also puts the slab's top edge level with the top of
+the cards instead of 3 mm below them, so the insert no longer sinks away from the opening. Width and height
 are set by the card footprint and so are effectively constant across standard-size boxes;
 only depth varies. Dimensioned around an Ultimate Guard Boulder 100+ (interior ≈ 68.5 × 67.5
 × 93 mm), which is where the fit gaps come from. That box is the only one whose interior
@@ -115,7 +118,7 @@ a bay sized for a marker you could keep in the open.
 
 A 51 mm jumbo needs a 51.8 mm well. That exceeds the tallest band the slab can hold once the
 dice row and the bay's bottom wall are accounted for, and it does not fit loose in the bay
-either — the largest bay any layout can offer is 38.9 mm. Nothing in a 66 × 88 slab takes one.
+either — the largest bay any layout can offer is 41.9 mm. Nothing in a 66 × 91 slab takes one.
 If you own a jumbo, it lives outside the insert.
 
 ### Internal dividers run thinner than the perimeter
@@ -159,8 +162,8 @@ token denominations from [aftermarket token sets](https://buythesametoken.com/pr
 
 Riftbound needs three separate card groups at the table: a 40-card main deck, a 12-card rune
 deck, and 3 battlefields plus a legend. The obvious idea is a card slot in the slab for the
-runes and battlefields. **It cannot be done in this case.** The slab is 88 mm tall — it has to
-be, to clear the 93 mm interior with a fit gap — and a sleeved standard card is about 91 mm.
+runes and battlefields. **It cannot be done in this case.** The slab is 91 mm tall — exactly a
+sleeve — and a sleeved standard card is the same 91 mm.
 The cards are 3 mm too tall for any slot the slab could contain, in any orientation. Sixteen
 sleeved cards also want ~11 mm of the depth budget, which is well over half the 18.6 mm the whole
 insert gets. Keep the runes and battlefields banded in the main card compartment.
@@ -364,7 +367,7 @@ centres the block instead.
 
 | Game | Band 1 | Band 2 | Bay |
 |---|---|---|---|
-| MTG | 3 × d6 | 3 × d6 | 34.4 mm |
+| MTG | 3 × d6 | 3 × d6 | 37.4 mm |
 | Pokémon | ⌀13.8 well + 2 × d6 | ⌀38.8 coin well + ⌀17.8 well | 15.8 mm |
 | Riftbound | ⌀20.8 VP die well + 2 × d6 | 3 × ⌀17.8 token wells | 31.9 mm |
 
@@ -421,7 +424,7 @@ and lid and check them in a real case before publishing.
 |---|---|---|
 | Case exterior | 76 × 75 × 98.5 mm | Ultimate Guard product data |
 | Case interior | 68.5 × 67.5 × 93 mm | Ultimate Guard Boulder 100+. **Reported, not official — measure yours** |
-| Slab | 66 × 88 × 18.6 mm | 1.25 mm/side across the width, 2.5 mm/side up the height |
+| Slab | 66 × 91 × 18.6 mm | 1.25 mm/side across the width, 1.0 mm/side up the height |
 | Die pocket | 16.8 mm sq × 16.3 deep | 0.4 mm/side around a 16.0 mm die |
 | Lid in groove | 0.25 mm/side, 0.3 mm vertical | derived from the groove geometry, unverified in plastic |
 

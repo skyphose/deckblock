@@ -54,9 +54,19 @@ d20_depth    = d20_size * 0.795 + 0.5;    // 18.0 for a 22 mm d20
 // Boulder sizes (60+/80+/100+/133+); only the depth budget changes.
 box_int_w = 68.5;       // interior width  (across the cards)
 box_int_h = 93.0;       // interior height (up the cards)
+// The slab's height is set from the SLEEVE, not from the box interior, and
+// that is the more trustworthy of the two numbers. box_int_h is a reported
+// figure rather than a published spec, but an Ultimate Guard Katana standard
+// sleeve is 66 x 91 mm and every deck in the box is that tall. So the rule is
+// simply: if your sleeved cards stand up in the box, this does too.
+//
+// It also puts the slab's top edge level with the top of the cards instead of
+// 3 mm below it, which is the point -- the insert stops sinking away from the
+// opening and is easier to get a finger to.
+sleeve_h  = 91.0;       // Ultimate Guard Katana, standard size
 box_int_d = 67.5;       // interior depth  (the card stack) -- 100+; reference only
 fit_gap_w = 2.5;        // TOTAL slack across the width
-fit_gap_h = 5.0;        // TOTAL slack up the height
+fit_gap_h = box_int_h - sleeve_h;   // whatever is left over: 2.0 mm
 
 /* [Slab] */
 slab_depth    = 0;      // 0 = auto/minimum for the chosen profile.

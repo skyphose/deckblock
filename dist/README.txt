@@ -20,10 +20,14 @@ WHAT IT IS
 --------------------------------------------------------------------------------
 WILL IT FIT YOUR BOX?
 --------------------------------------------------------------------------------
-  The slab is  66 x 88 x 18.6 mm.
+  The slab is  66 x 91 x 18.6 mm.
 
   It drops into any top-opening vertical deck box whose interior is at least
-  66 mm wide, 88 mm tall, with 19 mm of depth to spare.
+  66 mm wide, 91 mm tall, with 19 mm of depth to spare.
+
+  The height is taken from the SLEEVE, not the box: an Ultimate Guard Katana
+  standard sleeve is 66 x 91 mm, and every deck in the box is that tall. If
+  your sleeved cards stand up in it, so does this.
 
   Width and height are set by the card footprint, which is the same in every
   standard-size deck box, so only the depth really varies. Measure the inside of

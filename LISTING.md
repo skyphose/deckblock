@@ -59,9 +59,9 @@ It is universal by geometry rather than by brand. The width and height are set b
 the **card footprint**, which is the same in every standard-size deck box — only
 the depth differs. So the question is just whether yours has the room:
 
-> **The slab is 66 × 88 × 18.6 mm.**
+> **The slab is 66 × 91 × 18.6 mm.**
 > It drops into any top-opening vertical deck box with an interior at least
-> **66 mm wide, 88 mm tall, and 19 mm of depth to spare.**
+> **66 mm wide, 91 mm tall, and 19 mm of depth to spare.**
 
 Measure the inside of your box and compare. Most 100+ capacity top-loaders clear
 this comfortably; 50+ and 80+ boxes will take the slab but leave you correspondingly
