@@ -1,7 +1,12 @@
 # TCG Deck-Case Spacer Inserts
 
 A dice/counter tray that lives **inside** a top-opening vertical deck box, alongside the
-cards. One parametric source, three game layouts.
+cards. One parametric source, two variants.
+
+The variants answer **"do you carry a coin?"**, not "which game do you play". The layouts
+were named after games for three releases and it was always slightly a lie — nothing in
+either is game-specific, and people picked the wrong one because they picked by the name on
+the box rather than by what they actually carry.
 
 **Fit spec:** the slab is **66 × 91 × 18.6 mm**. It drops into any top-opening deck box with
 an interior at least 66 mm wide, 91 mm tall, with 19 mm of depth to spare.
@@ -14,11 +19,10 @@ only depth varies. Dimensioned around an Ultimate Guard Boulder 100+ (interior �
 figure has been looked up, and even that one is a reported number rather than an official
 spec — treat the three numbers above as the thing to measure against, not the brand.
 
-| Game | Holds | Slab depth | Card depth left |
+| Variant | Holds | Slab depth | Card depth left |
 |---|---|---|---|
-| **MTG** | 6 × 16 mm d6 + token bay | 18.6 mm | 48.9 mm |
-| **Pokémon** | ⌀38 mm flip-coin well, both counter sizes, 2 × d6, marker bay | 18.6 mm | 48.9 mm |
-| **Riftbound** | Victory-point die well, 2 × d6, 3 Might-modifier token wells, bay | 18.6 mm | 48.9 mm |
+| **`nocoin`** | 6 × 16 mm d6 + a 43.8 mm open bay for tokens | 18.6 mm | 48.9 mm |
+| **`coin`** | **7** × 16 mm d6 + a ⌀38 mm flip-coin well, no bay | 18.6 mm | 48.9 mm |
 
 ![Pokémon layout](preview_pokemon.png)
 
@@ -53,9 +57,18 @@ lift the slab out, using the finger scoop in the top rail.
 ```
 
 Every millimetre added here is a millimetre taken from the card stack. That is why the
-Pokémon and Riftbound wells are **16.3 mm deep and no deeper**: a deeper well buys
+Round wells are **16.3 mm deep and no deeper**: a deeper well buys
 counter capacity you will not use, and a double-sleeved 60-card deck needs roughly 45 mm.
-All three profiles therefore land on the same 18.6 mm.
+Both variants therefore land on the same 18.6 mm.
+
+Pick by what is in your bag, not by which game you play — nothing in either layout is
+game-specific. MTG and Riftbound players almost always want the no-coin one; Pokémon
+players almost always want the coin one.
+
+The coin variant has **more** dice, not fewer. A round well's diameter sets the height of the
+whole band it sits in, so the coin's band is 38.8 mm tall and leaves 22.2 mm of the 61 mm
+interior beside it — exactly enough for a seventh die rather than dead space. **The coin costs
+the bay, not the dice.**
 
 There used to be a fourth line here: 1.4 mm of "retaining lip above the groove". It was
 doing nothing. The groove is a **dovetail** — the lid is trapezoidal and wide at its base,
@@ -64,7 +77,7 @@ it. Running the groove out to the top face costs nothing structurally, takes 1.4
 off the slab, and brings the lid flush with the frame.
 
 A polyhedral die is cheaper than it looks: one resting on a face is only
-**0.795 × its vertex-to-vertex width** tall, so Riftbound's 20 mm victory-point die stands
+**0.795 × its vertex-to-vertex width** tall, so a 20 mm d20 in a custom layout stands
 15.9 mm and clears the standard 16.3 mm well without deepening anything. If you build a
 custom profile around a d20, use `well(d20_size, d20_depth)` — `d20_depth` applies that
 rule for you instead of the naive full width.
@@ -131,38 +144,10 @@ One divider is excluded: the last band's gap to the bay carries the **detent bum
 footprint is 2.30 mm across. On a 1.6 mm divider the dome would overhang its own wall and need
 support, so that gap stays at `wall`.
 
-## Riftbound
-
-Riftbound is a race to **8 points**, scored by taking and holding battlefields. That number
-drives the layout, because it is the one thing that has to survive between turns.
-
-The thing worth knowing before designing for it: **combat damage does not persist.** Units
-that survive a combat heal back to full, so there is no board state of accumulated damage to
-track. That is why this profile has no damage-counter bank, unlike Pokémon — it would sit
-empty. What does need separating is **Might modifier tokens**, which come in denominations
-(+1/+2, +3/+4, −1/−2) and are miserable to use from a single mixed pile. Hence three wells.
-
-| Band | Holds | Why |
-|---|---|---|
-| ⌀20.8 well | Victory-point die | The score, 0–8, is the only persistent state |
-| 2 × d6 | Might tracking during combat | Transient — dice, not counters |
-| 3 × ⌀17.8 wells | Might modifiers, one denomination each | Keeps +1/+2 apart from −1/−2 |
-| 31.9 mm bay | Stun tokens, spares | |
-
-The VP well takes a **20 mm d8 or d20** at the standard 16.3 mm depth, so the slab stays at
-18.6 mm with the full 48.9 mm of card room. A d20 clears because it is only 0.795 × its width
-tall — a 20 mm one stands 15.9 mm, under the 16.3 mm well.
-
-Sources: [Riftbound: how to play](https://riftbound.gg/how-to-play/) ·
-[scoring guide](https://riftbound.gg/the-in-depth-guide-to-scoring-in-riftbound/) ·
-[deck construction](https://riftbound.wiki.fextralife.com/Deck_Construction) ·
-token denominations from [aftermarket token sets](https://buythesametoken.com/products/riftbound-tcg-token-set).
-
 ### What this insert deliberately does not do
 
-Riftbound needs three separate card groups at the table: a 40-card main deck, a 12-card rune
-deck, and 3 battlefields plus a legend. The obvious idea is a card slot in the slab for the
-runes and battlefields. **It cannot be done in this case.** The slab is 91 mm tall — exactly a
+Some games want a second card group at the table — Riftbound's rune deck and battlefields are
+the clearest case. The obvious idea is a card slot in the slab for them. **It cannot be done in this case.** The slab is 91 mm tall — exactly a
 sleeve — and a sleeved standard card is the same 91 mm.
 The cards are 3 mm too tall for any slot the slab could contain, in any orientation. Sixteen
 sleeved cards also want ~11 mm of the depth budget, which is well over half the 18.6 mm the whole
@@ -201,7 +186,7 @@ are right, since it is the same extrusion on every profile.
 ## Rendering
 
 ```sh
-./render.sh              # all three profiles -> stl/<game>/ + preview_<game>.png
+./render.sh              # both variants -> stl/<variant>/ + preview_<variant>.png
 ./render.sh pokemon      # just one
 ```
 
@@ -224,11 +209,10 @@ overhang on a lid is its 2.87 mm² detent dimple. **No supports anywhere.**
 
 Solid volumes:
 
-| Game | Body | Lid |
+| Variant | Body | Lid |
 |---|---|---|
-| MTG | 30.3 cm³ | 6.0 cm³ |
-| Pokémon | 45.0 cm³ | 6.0 cm³ |
-| Riftbound | 36.0 cm³ | 6.0 cm³ |
+| `nocoin` | 30.8 cm³ | 6.2 cm³ |
+| `coin` | 49.1 cm³ | 6.2 cm³ |
 
 Down 12% across the three bodies from a space-saving pass: the top rail cut from 10 mm to 7,
 the floor from 1.0 to 0.8, and every divider *between two bands* thinned from `wall` to
@@ -243,19 +227,19 @@ needs no support. Every **body** measures exactly **0.00 mm²** of unsupported f
 pinch notches keep it that way by construction: they are cut downward from the cavity mouth,
 so nothing is ever left spanning over one.
 
-**Tightest wall:** **3.3 mm**, between the coin well and its neighbours in Pokémon band 2,
-and between the VP die well and the dice in Riftbound band 1. That is eight perimeters at
+**Tightest wall:** **3.3 mm**, between the coin well and its neighbour in the `coin`
+variant's third band. That is eight perimeters at
 0.4 mm and it thickens immediately either side of the tangent line. Nothing in any shipped
 profile is thinner.
 
-## One lid fits all three
+## One lid fits both
 
-The three lids are now **the same file** — identical MD5, not merely similar.
+Both lids are **the same file** — identical MD5, not merely similar, and it is checked rather
+than assumed: `tools/build_all.sh` compares the MD5s on every build.
 
 They used to differ by the position of one dimple, because the detent bump sat on the divider
-between the last band and the bay, and that divider lands somewhere different in every layout
-(43.6 mm on MTG, 38.6 on Riftbound, 21.6 on Pokémon). Any lid would slide in any body, but only
-its own would click.
+between the last band and the bay, and that divider lands somewhere different in every layout.
+Any lid would slide in any body, but only its own would click.
 
 The detent is now anchored to the **bottom wall** — the one piece of solid material every layout
 has in the same place — at `detent_y = 4.0`. The lid no longer references the band list at all,
@@ -365,11 +349,10 @@ custom_bands = [
 `cell_gap = 0` spreads the cells to fill the width; a positive value uses that fixed gap and
 centres the block instead.
 
-| Game | Band 1 | Band 2 | Bay |
-|---|---|---|---|
-| MTG | 3 × d6 | 3 × d6 | 37.4 mm |
-| Pokémon | ⌀13.8 well + 2 × d6 | ⌀38.8 coin well + ⌀17.8 well | 15.8 mm |
-| Riftbound | ⌀20.8 VP die well + 2 × d6 | 3 × ⌀17.8 token wells | 31.9 mm |
+| Variant | Band 1 | Band 2 | Band 3 | Bay |
+|---|---|---|---|---|
+| `nocoin` | 3 × d6 | 3 × d6 | — | 43.8 mm |
+| `coin` | 3 × d6 | 3 × d6 | ⌀38.8 coin well + d6 | none |
 
 The bay is one undivided space. It used to carry a centre rib to support the lid mid-span,
 which bought very little — the lid is captured in the side grooves along its whole length —

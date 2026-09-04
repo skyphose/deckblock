@@ -1,6 +1,6 @@
 ================================================================================
  UNIVERSAL DICE & COUNTER INSERT - top-opening vertical deck boxes
- MTG - Pokemon - Riftbound        parametric OpenSCAD source included
+ with or without a coin well      parametric OpenSCAD source included
 ================================================================================
 
 WHAT IT IS
@@ -75,7 +75,7 @@ PRINTING
   Lid           0.16 mm layers, 4 walls, 100% infill  (it is only 1.2 mm thick)
   Material      PLA or PETG. PETG slides a little more smoothly.
 
-  Print one body + one lid. All three profiles ship the SAME lid - one file,
+  Print one body + one lid. Both variants ship the SAME lid - one file,
   not three - because the detent is anchored to the bottom wall rather than to
   each layout's dividers. Any lid slides, clicks and holds in any body.
 

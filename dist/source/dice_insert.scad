@@ -13,9 +13,10 @@
 //  Set `game` and `part` below (or override with -D) and export STL.
 // ============================================================================
 
-/* [Game profile] */
-// Which layout to build.
-game = "mtg"; // [mtg, pokemon, riftbound, custom]
+/* [Variant] */
+// Which layout to build. The question is whether you carry a coin, not which
+// game you play -- see the profiles section for why.
+variant = "nocoin"; // [nocoin, coin, custom]
 
 /* [Part to render] */
 // Which piece to export.
@@ -28,7 +29,6 @@ die_headroom  = 0.3;    // pocket depth above the die, so the lid captures it
 // Kept for custom layouts: `well(d20_size, d20_depth)` is the right way to hold
 // a d20, and the depth rule below is the non-obvious part.
 d20_size      = 22.0;   // WIDEST across your d20 (vertex to vertex) -- measure it
-vp_die_size   = 20.0;   // Riftbound victory-point tracker: a 20 mm d8 or d20
 
 /* [Round wells] */
 well_clearance = 0.8;   // TOTAL added to a well diameter -> 0.4 per side
@@ -63,9 +63,14 @@ box_int_h = 93.0;       // interior height (up the cards)
 // It also puts the slab's top edge level with the top of the cards instead of
 // 3 mm below it, which is the point -- the insert stops sinking away from the
 // opening and is easier to get a finger to.
-sleeve_h  = 91.0;       // Ultimate Guard Katana, standard size
+// Both slab dimensions are the SLEEVE's, so the slab is exactly the footprint
+// of one card. The width already worked out at 66 mm from box_int_w - fit_gap_w,
+// but only by coincidence -- stating it this way makes it an invariant instead
+// of a number that would drift silently the moment either of those was edited.
+sleeve_w  = 66.0;       // Ultimate Guard Katana, standard size
+sleeve_h  = 91.0;
 box_int_d = 67.5;       // interior depth  (the card stack) -- 100+; reference only
-fit_gap_w = 2.5;        // TOTAL slack across the width
+fit_gap_w = box_int_w - sleeve_w;   // whatever is left over: 2.5 mm
 fit_gap_h = box_int_h - sleeve_h;   // whatever is left over: 2.0 mm
 
 /* [Slab] */
@@ -208,62 +213,51 @@ function well(dia, dp) =
 function slot(w, h, dp) = ["sq", w, h, dp];
 
 // ------------------------------------------------------------------ profiles ---
+//
+// TWO VARIANTS, and the question they answer is "do you carry a coin?" rather
+// than "which game do you play". The layouts were named after games for three
+// releases and it was always slightly a lie -- nothing in either of them is
+// game-specific, and people kept picking the wrong one because they picked by
+// the name on the box instead of by what they actually carry.
+//
+//   nocoin   6 dice and an open bay for tokens
+//   coin     7 dice and a 38 mm flip-coin well, no bay
+//
+// MTG and Riftbound players almost always want `nocoin`; Pokemon players almost
+// always want `coin`. That is guidance, not a rule.
 
-// Magic: the Gathering -- 6x 16 mm d6 + a token bay. The original layout.
-mtg_bands = [
+// All dice, plus an open bay for tokens, markers and spares.
+nocoin_bands = [
     [[ d6(), d6(), d6() ], div_wall, 0],
     [[ d6(), d6(), d6() ], wall,     0],
 ];
 
-// Pokemon -- a flip-coin well, a damage-counter well in each size, 2 dice, and
-// a bay for status-condition and VSTAR/GX markers.
+// All dice AND a coin. The coin is bigger than it looks: official Pokemon coins
+// run 29.8-51.6 mm, the common modern flip coin is the 34 mm "large", and the
+// larger authorised collectible is 38 mm. This is built for 38 mm, which
+// swallows every size below it. A 51 mm jumbo cannot be housed at all -- not in
+// a well, and not loose either. Nothing in a 66 x 91 slab will take one.
 //
-// The coin dominates this layout, and it is bigger than it looks. Official
-// Pokemon coins run 29.8-51.6 mm; the common modern flip coin is the 34 mm
-// "large", and the larger authorised collectible is 38 mm. This is built for
-// 38 mm, which swallows every size below it.
-//
-// A round well's DIAMETER sets the height of the whole band it sits in, and a
-// 38.8 mm well leaves only 22.2 mm of the 61 mm interior beside it. So the coin
-// gets one companion, not two: pairing it with the LARGE counter well uses that
-// width best (4.4 mm gap, versus 8.4 mm of dead space beside a small one). The
-// small counter well moves up to join the dice, whose band is 16.8 mm tall and
-// has room for it.
-//
-// A 51 mm jumbo coin cannot be housed at all -- not in a well, and not loose in
-// the bay either. Nothing in a 66 x 88 slab will take one.
-pokemon_bands = [
-    [[ well(ctr_small_d, well_depth), d6(), d6() ], div_wall, 0],
-    [[ well(coin_d, well_depth), well(ctr_large_d, well_depth) ], wall, 0],
+// A round well's DIAMETER sets the height of the whole band it sits in, so the
+// coin's band is 38.8 mm tall and leaves 22.2 mm of the 61 mm interior beside
+// it -- exactly enough for one more die rather than dead space. That is where
+// the seventh die comes from, and it is why this variant has MORE dice than the
+// no-coin one and no bay: the coin costs the bay, not the dice.
+coin_bands = [
+    [[ d6(), d6(), d6() ], div_wall, 0],
+    [[ d6(), d6(), d6() ], div_wall, 0],
+    [[ well(coin_d, well_depth), d6() ], wall, 0],
 ];
 
-// Riftbound (League of Legends TCG) -- a victory-point die and separated
-// Might-modifier token wells.
-//
-// Riftbound is a race to 8 points, so the ONE thing that must persist between
-// turns is the score; combat damage does not (surviving units heal to full
-// after every combat), which is why this layout has no damage-counter bank.
-// The three Might-modifier wells keep denominations from mixing -- +1/+2,
-// +3/+4 and -1/-2 want to be separately grabbable, not one pile.
-//
-// The VP well takes a 20 mm d8 or d20 at the standard 16.3 mm depth: a d20 is
-// only 0.795 x its width tall, so a 20 mm one stands 15.9 mm and still clears.
-riftbound_bands = [
-    [[ well(vp_die_size, well_depth), d6(), d6() ], div_wall, 0],
-    [[ well(ctr_large_d, well_depth), well(ctr_large_d, well_depth),
-       well(ctr_large_d, well_depth) ], wall, 0],
-];
-
-// Your own layout -- edit freely, then set game = "custom".
+// Your own layout -- edit freely, then set variant = "custom".
 custom_bands = [
     [[ d6(), d6(), d6() ], div_wall, 0],
     [[ well(ctr_small_d, well_depth), well(ctr_small_d, well_depth) ], wall, 0],
 ];
 
 bands =
-      game == "mtg"       ? mtg_bands
-    : game == "pokemon"   ? pokemon_bands
-    : game == "riftbound" ? riftbound_bands
+      variant == "nocoin" ? nocoin_bands
+    : variant == "coin"   ? coin_bands
     :                       custom_bands;
 
 // ------------------------------------------------------------------ helpers ---
@@ -591,7 +585,7 @@ else if (part == "all") {
 }
 
 // ------------------------------------------------------------------- report ---
-echo(str("game = ", game));
+echo(str("variant = ", variant));
 echo(str("slab = ", slab_w, " x ", slab_h, " x ", D, " mm"));
 echo(str("deepest cavity = ", max_depth(), ", floor = ", z_deep_bot));
 for (k = [0:len(bands)-1])

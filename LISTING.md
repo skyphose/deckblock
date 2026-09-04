@@ -14,18 +14,18 @@ ten seconds with calipers.
 
 ## Title
 
-> Universal Dice & Counter Insert for Top-Opening Deck Boxes — MTG, Pokémon & Riftbound
+> Universal Dice Insert for Top-Opening Deck Boxes — with or without a coin well
 
 ## Summary / one-liner
 
 > A no-supports sliding-lid tray that fills the dead space in front of your deck.
-> Flat on both faces, three game layouts, and a parametric source file so you can
+> Flat on both faces, two variants, and a parametric source file so you can
 > build your own.
 
 ## Tags
 
 `deck box` `deck box insert` `dice tray` `dice insert` `universal` `mtg`
-`magic the gathering` `pokemon` `riftbound` `tcg` `card game` `organizer`
+`magic the gathering` `pokemon` `riftbound` `tcg` `card game` `organizer` `coin holder`
 `ultimate guard` `boulder` `gamegenic` `dragon shield` `parametric` `openscad`
 `customizer` `no supports` `sliding lid`
 
@@ -86,18 +86,24 @@ seated, the floor of the deck box sits across that edge and mechanically blocks 
 There is no orientation in which it can slide open while it is in the box. Lift the
 slab out by the finger scoop in the top rail and it opens normally.
 
-### Three layouts
+### Two variants
 
 | Variant | Holds |
 |---|---|
-| **MTG** | 6 × 16 mm d6 + a large open bay for tokens |
-| **Pokémon** | ⌀38 mm flip-coin well, both damage-counter sizes, 2 × d6, marker bay |
-| **Riftbound** | Victory-point die well, 2 × d6, 3 separated Might-modifier wells |
+| **Dice** | 6 × 16 mm d6 and a 43.8 mm open bay for tokens, markers and spares |
+| **Dice + Coin** | **7** × 16 mm d6 and a ⌀38 mm flip-coin well |
 
-The Riftbound layout is built around how the game actually plays: it is a race to 8
-points, so the score is the one thing that has to persist between turns — while
-combat damage does **not** persist, which is why there is no damage-counter bank.
-The three token wells keep Might modifier denominations from becoming one mixed pile.
+Pick by what is in your bag, not by which game you play — nothing in either layout is
+game-specific. MTG and Riftbound players almost always want the no-coin one; Pokémon
+players almost always want the coin one.
+
+The coin version has *more* dice, not fewer. A round well's diameter sets the height of the
+whole band it sits in, so the coin's band is 38.8 mm tall and leaves 22.2 mm of the 61 mm
+interior beside it — exactly enough for a seventh die rather than dead space. **The coin
+costs the bay, not the dice.**
+
+A 51 mm jumbo coin cannot be housed at all — not in a well, and not loose either. Nothing
+in a 66 × 91 slab will take one.
 
 ### Things come back out again
 
@@ -119,7 +125,7 @@ The three token wells keep Might modifier denominations from becoming one mixed 
 - **Lid:** 0.16 mm layers, 4 walls, 100% infill — it is only 1.2 mm thick.
 - PLA is fine; PETG slides a little more smoothly.
 
-Print one body and one lid. All three profiles ship the **same lid** — one file, not three. The detent is
+Print one body and one lid. Both variants ship the **same lid** — one file, not two. The detent is
 anchored to the bottom wall rather than to each layout's dividers, so a lid from any
 variant slides, clicks and holds in any body.
 
