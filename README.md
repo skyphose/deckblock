@@ -1,4 +1,4 @@
-# TCG Deck-Case Spacer Inserts
+# deckblock
 
 A dice/counter tray that lives **inside** a top-opening vertical deck box, alongside the
 cards. One parametric source, three game layouts.
