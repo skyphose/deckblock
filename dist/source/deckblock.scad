@@ -1,23 +1,22 @@
 // ============================================================================
-//  TCG Deck-Case Spacer Insert  --  v1.1, parametric, two variants
+//  deckblock  --  parametric dice and counter insert, two variants
 // ----------------------------------------------------------------------------
 //  A full-footprint slab that spans the interior width and height of an
 //  Ultimate Guard Boulder deck case but only ~19 mm of its ~67 mm depth.
-//  Captured on all four sides by the case walls, so it cannot shift or rattle.
+//  Captured on all four sides by the case walls, so it cant shift or rattle.
 //
 //  The sliding lid exits the BOTTOM edge: once the slab is seated in the case,
 //  the floor of the deck box mechanically blocks the lid shut.
 //
 //  Print flat, open side up. No supports anywhere.
 //
-//  Set `variant` and `part` below (or override with -D) and export STL.
+//  Set `variant` and `part` below (or override with -D) and export stl.
 //
-//  v1.1  67 x 91 mm: height taken from the Katana sleeve so the fit test is
-//        "do your sleeved cards stand up in the box", width a millimetre over
-//        it. Two variants, coin and no coin, replacing three game layouts.
-//  v1.0  66 x 88 mm, three game layouts.
+//  67 x 91 mm. the height is taken from the katana sleeve, so the fit test is
+//  "do your sleeved cards stand up in the box", and the width is a millimeter
+//  over it. two variants, coin and no coin.
 // ============================================================================
-version = "1.1";
+version = "1.0";
 
 /* [Variant] */
 // Which layout to build. The question is whether you carry a coin, not which
@@ -40,14 +39,14 @@ d20_size      = 22.0;   // WIDEST across your d20 (vertex to vertex) -- measure 
 well_clearance = 0.8;   // TOTAL added to a well diameter -> 0.4 per side
 
 /* [Counters -- VERIFY THESE AGAINST YOUR OWN ACCESSORIES] */
-ctr_small_d  = 13.0;    // Pokemon 10-damage / generic small counter, disc diameter
-ctr_large_d  = 17.0;    // Pokemon 50-damage / generic large counter
+ctr_small_d  = 13.0;    // pokemon 10-damage / generic small counter, disc diameter
+ctr_large_d  = 17.0;    // pokemon 50-damage / generic large counter
 coin_d       = 38.0;    // flip coin -- see the coin table in the README
 
 // Cavity depths. Keeping every well at the die depth holds the whole slab at
 // the proven 20.2 mm, which is what leaves 47.3 mm of card stack behind it.
-// Going deeper buys counter capacity you almost certainly do not need and
-// costs card room a double-sleeved 60-card deck cannot spare.
+// Going deeper buys counter capacity you almost certainly dont need and
+// costs card room a double-sleeved 60-card deck cant spare.
 well_depth   = die_size + die_headroom;   // 16.3 -- counter / coin stack depth
 
 // A d20 resting on a face is only ~0.795 x its vertex-to-vertex width tall
@@ -61,7 +60,7 @@ d20_depth    = d20_size * 0.795 + 0.5;    // 18.0 for a 22 mm d20
 box_int_w = 68.5;       // interior width  (across the cards)
 box_int_h = 93.0;       // interior height (up the cards)
 // The slab's height is set from the SLEEVE, not from the box interior, and
-// that is the more trustworthy of the two numbers. box_int_h is a reported
+// thats the more trustworthy of the two numbers. box_int_h is a reported
 // figure rather than a published spec, but an Ultimate Guard Katana standard
 // sleeve is 66 x 91 mm and every deck in the box is that tall. So the rule is
 // simply: if your sleeved cards stand up in the box, this does too.
@@ -76,16 +75,16 @@ box_int_h = 93.0;       // interior height (up the cards)
 // would have drifted silently the moment either of those was edited.
 sleeve_w  = 66.0;       // Ultimate Guard Katana, standard size
 sleeve_h  = 91.0;
-// ...and then a millimetre wider than the sleeve, deliberately. The slab does
+// ...and then a millimeter wider than the sleeve, deliberately. The slab does
 // not have to fit BESIDE a card, only inside the box, and the box is 68.5 mm
-// across. Every millimetre here lands in the cavity field, where it widens the
+// across. Every millimeter here lands in the cavity field, where it widens the
 // gaps you get a finger into.
 //
 // This is the one dimension where the reported box interior is load-bearing:
 // the height is bounded by the sleeve, which is a published figure, but the
-// width is bounded only by box_int_w. At over_w = 1.0 there is 0.75 mm of
+// width is bounded only by box_int_w. At over_w = 1.0 theres 0.75 mm of
 // clearance per side, so a box 1 mm narrower than reported still fits and one
-// 1.5 mm narrower does not. Set it back to 0 to sit exactly on the sleeve.
+// 1.5 mm narrower doesnt. Set it back to 0 to sit exactly on the sleeve.
 over_w    = 1.0;
 box_int_d = 67.5;       // interior depth  (the card stack) -- 100+; reference only
 fit_gap_w = box_int_w - sleeve_w - over_w;   // whatever is left over: 1.5 mm
@@ -112,18 +111,18 @@ floor_t       = 0.8;
 cap_t         = 0.0;
 corner_relief = 3.0;    // 45 deg chamfer on the four vertical corners
 // Solid rail at the top edge, holding the finger scoop. This is the single
-// largest lump of material in the part -- 66 x rail x 18.8 of solid -- so it is
+// largest lump of material in the part -- 66 x rail x 18.8 of solid -- so its
 // kept only as deep as the scoop needs. scoop_depth (6.0) plus a 2 mm beam
-// under it is the floor; below that the beam you hook a finger against when
+// under its the floor; below that the beam you hook a finger against when
 // lifting the slab out gets too thin to trust.
 top_rail      = 7.0;
 
 /* [Layout] */
 // The open bay is one undivided space by default. Setting this true splits it
-// with a centre rib, which gives the lid a mid-span support -- at the cost of
+// with a center rib, which gives the lid a mid-span support -- at the cost of
 // turning one usable pocket into two narrow ones. The lid is captured in the
-// side grooves along its whole length, so it does not need the rib.
-bay_rib   = false;      // centre rib across the open bay
+// side grooves along its whole length, so it doesnt need the rib.
+bay_rib   = false;      // center rib across the open bay
 lead_in   = 0.6;        // chamfer at the mouth of each cavity
 
 /* [Push-out holes] */
@@ -151,7 +150,7 @@ notch_bite     = 2.2;   // how far it eats into the divider -- a request, not a
                         // promise: each edge is clamped by notch_min_wall.
 notch_min_wall = 1.2;   // material that must survive in the divider being cut
 notch_depth    = 4.5;   // how far below the cavity mouth it reaches
-notch_ease     = 0.8;   // dish centre raised above the mouth, so the rim is
+notch_ease     = 0.8;   // dish center raised above the mouth, so the rim is
                         // eased instead of meeting the surface at 90 degrees
 notch_keepout  = 1.5;   // solid kept around the detent bump's footing
 
@@ -196,10 +195,10 @@ boss_extra   = 3.0;    // how far the boss reaches past the bottom wall
 // The lid floats that far inside its groove before its wide base wedges in the
 // taper, so a bump shorter than the float passes underneath without ever
 // touching the lid. The original 0.22 mm bump against 0.3 mm of float was
-// exactly that case -- it was not weak, it was inert.
+// exactly that case -- it wasnt weak, it was inert.
 //
 // What is left over, detent_h - lid_vert_clearance, is how far the lid has to
-// bow to ride over the bump. Over a 61 mm span of 1.2 mm plastic that is a
+// bow to ride over the bump. Over a 61 mm span of 1.2 mm plastic thats a
 // light, definite click. It relaxes fully once the dimple swallows the bump,
 // because dimple_h + lid_vert_clearance > detent_h.
 detent_r  = 1.4;   // bump on the divider wall
@@ -218,7 +217,7 @@ eps = 0.01;
 //                                    for "rd", w == h == outer diameter
 //  band = [ [cell, ...], gap_after, cell_gap ]
 //         cell_gap == 0  -> gaps derived to fill the full inner width
-//         cell_gap  > 0  -> fixed gap, block centred on the inner width
+//         cell_gap  > 0  -> fixed gap, block centered on the inner width
 //
 //  Bands stack downward from under the top rail. Whatever height is left
 //  between the last band and the bottom wall becomes the open bay.
@@ -241,7 +240,7 @@ function slot(w, h, dp) = ["sq", w, h, dp];
 //   nocoin   6 dice and an open bay for tokens
 //   coin     7 dice and a 38 mm flip-coin well, no bay
 //
-// MTG and Riftbound players almost always want `nocoin`; Pokemon players almost
+// mtg and riftbound players almost always want `nocoin`; pokemon players almost
 // always want `coin`. That is guidance, not a rule.
 
 // All dice, plus an open bay for tokens, markers and spares.
@@ -250,16 +249,16 @@ nocoin_bands = [
     [[ d6(), d6(), d6() ], wall,     0],
 ];
 
-// All dice AND a coin. The coin is bigger than it looks: official Pokemon coins
+// All dice AND a coin. The coin is bigger than it looks: official pokemon coins
 // run 29.8-51.6 mm, the common modern flip coin is the 34 mm "large", and the
 // larger authorised collectible is 38 mm. This is built for 38 mm, which
-// swallows every size below it. A 51 mm jumbo cannot be housed at all -- not in
+// swallows every size below it. A 51 mm jumbo cant be housed at all -- not in
 // a well, and not loose either. Nothing in a 66 x 91 slab will take one.
 //
 // A round well's DIAMETER sets the height of the whole band it sits in, so the
 // coin's band is 38.8 mm tall and leaves 22.2 mm of the 61 mm interior beside
 // it -- exactly enough for one more die rather than dead space. That is where
-// the seventh die comes from, and it is why this variant has MORE dice than the
+// the seventh die comes from, and its why this variant has MORE dice than the
 // no-coin one and no bay: the coin costs the bay, not the dice.
 coin_bands = [
     [[ d6(), d6(), d6() ], div_wall, 0],
@@ -390,7 +389,7 @@ module cavity_leadin(c, x, y) {
                 square([c[1], c[2]], center = true);
 }
 
-// Pinch notches beside a cavity: one scallop centred on each of its four
+// Pinch notches beside a cavity: one scallop centered on each of its four
 // edges. Cut DOWNWARD from the cavity mouth, so no material is left bridging
 // over them and the part stays support-free.
 //
@@ -430,10 +429,10 @@ function edge_bite(bs, w, k, i, side) =
 //   plan:   ___..----..___     a `notch_arc` segment of a large circle, so the
 //                              sweep is long and gentle rather than a tight bowl
 //
-// The dish is an ellipsoid whose centre sits notch_ease ABOVE the cavity mouth.
+// The dish is an ellipsoid whose center sits notch_ease ABOVE the cavity mouth.
 // That matters twice over: the rim is eased rather than a 90 degree lip, and
-// since every scrap of material is below the centre, every cut surface faces
-// upward -- the notch cannot introduce an overhang.
+// since every scrap of material is below the center, every cut surface faces
+// upward -- the notch cant introduce an overhang.
 //
 // Clipped to its own side of the edge, so a dish never reaches across a cavity
 // and nibbles the divider on the far side.
@@ -581,7 +580,7 @@ module insert_lid(w, h, rail) {
                        z_groove_bot + lid_t - grip_depth + gr])
                 rotate([0, 90, 0]) cylinder(r = gr, h = grip_w, center = true);
         // Mating dimple for the body's detent bump, at the closed position.
-        // The lid sits lid_end_clearance further in than it is modelled, hence
+        // The lid sits lid_end_clearance further in than its modelled, hence
         // the offset. No dependence on the layout -- this is why every profile
         // now ships the identical lid.
         translate([w/2, detent_y - lid_end_clearance,

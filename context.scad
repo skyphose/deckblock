@@ -1,22 +1,22 @@
-// Listing explainer: what the insert is for. The slab occupies only ~20 mm of
-// the case's ~67 mm depth; the deck shown above it is what still fits behind.
+// listing explainer: what the insert is for. the slab takes only ~20 mm of the
+// case's ~67 mm depth. the deck shown above it is what still fits behind.
 // NOT a printable part.
-//   openscad -D 'game="mtg"' -D 'part="none"' -o context.png context.scad
-include <dice_insert.scad>
+//   openscad -D 'variant="nocoin"' -D 'part="none"' -o context.png context.scad
+include <deckblock.scad>
 
-deck_lift = 86;     // deck exploded away so it does not hide the insert
+deck_lift = 86;     // deck exploded away so it doesnt hide the insert
 ct = 3.5;
 ox = -(box_int_w - slab_w) / 2;
 oy = -(box_int_h - slab_h) / 2;
 
-// The deck case, ghosted.
+// the deck case, ghosted.
 %translate([ox - ct, oy - ct, -ct])
     difference() {
         cube([box_int_w + 2*ct, box_int_h + 2*ct, box_int_d + ct]);
         translate([ct, ct, ct]) cube([box_int_w, box_int_h, box_int_d + 1]);
     }
 
-// The deck that still fits behind the insert: 47.3 mm of double-sleeved cards.
+// the deck that still fits behind the insert: 47.3 mm of double-sleeved cards.
 deck_t = box_int_d - D - 1.0;
 for (i = [0 : 15])
     color(i % 2 ? "#e6ebf1" : "#ccd5de")

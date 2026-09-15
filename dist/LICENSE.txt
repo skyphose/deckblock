@@ -1,5 +1,5 @@
-Boulder Dice Insert — a parametric dice and counter insert for the
-Ultimate Guard Boulder deck case.
+deckblock - a parametric dice and counter insert for top-opening deck boxes,
+dimensioned around the Ultimate Guard Boulder 100+.
 
 Copyright (c) 2026 skyphose
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Render body + lid for every profile into a directory, then check them.
+# render body + lid for every variant into a directory, then check them.
 #   sh tools/build_all.sh [outdir]
 set -e
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
@@ -11,7 +11,7 @@ mkdir -p "$OUT"
 for g in nocoin coin; do
     for p in body lid; do
         "$OPENSCAD" -q -o "$OUT/${p}_${g}.stl" --export-format binstl \
-            -D "variant=\"$g\"" -D "part=\"$p\"" "$ROOT/dice_insert.scad" 2>&1 \
+            -D "variant=\"$g\"" -D "part=\"$p\"" "$ROOT/deckblock.scad" 2>&1 \
             | grep -iE "^ERROR|WARNING: Assert" || true
     done
 done
